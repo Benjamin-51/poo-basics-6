@@ -2,6 +2,7 @@
 
     class Vehicle{
 
+        public const COEF_KM_TO_MILES = 1.60934;
         protected int $nbWheels = 4;
         protected int $currentSpeed = 0;
         protected string $color;
@@ -15,6 +16,16 @@
             $this->nbSeats = $nbSeats;
         }
         
+        public static function milesToKm(int $distanceInMiles): ?int
+        {   
+            return $distanceInMiles * self::COEF_KM_TO_MILES;    
+        }
+
+        public static function kmToMiles(int $distanceInKm): ?int
+        {   
+            return $distanceInKm / self::COEF_KM_TO_MILES;    
+        }
+
         public function start(): string
         {
             if($this->currentSpeed > 0){
