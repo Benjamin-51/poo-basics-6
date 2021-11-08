@@ -1,13 +1,10 @@
 <?php
 
-require_once 'Bicycle.php';
-require_once 'Truck.php';
-require_once 'Skateboard.php';
+require_once 'Speedometer.php';
 
 
-$truck = new Truck("rouge", 2, "hybrid", 20);
-$bicycle = new Bicycle("bleu", 1);
+$speedometer = new Speedometer();
 
-echo $truck->milesToKm(500) . PHP_EOL;
-echo Vehicle::kmToMiles(500);
+echo round($speedometer->milesToKm(500),2) . PHP_EOL;
+echo round(Speedometer::kmToMiles(10),2);
 ?>
